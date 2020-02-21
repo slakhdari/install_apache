@@ -1,0 +1,16 @@
+---
+- name: Installation des serveurs web
+  hosts: web
+  vars:
+    apache_port: 80
+  remote_user: ansible
+  become: yes
+  tasks:
+  - name: Install du package apache
+    yum:
+      name: httpd
+      state: latest
+  - name: Start du service apache
+    service:
+      name: httpd
+      state: started
