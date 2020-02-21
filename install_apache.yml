@@ -1,6 +1,5 @@
 ---
 - name: Installation des serveurs web
-  hosts: web
   vars:
     apache_port: 80
   remote_user: ansible
